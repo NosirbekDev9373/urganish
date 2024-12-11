@@ -1,0 +1,355 @@
+
+ctrl+alt+t - terminalni ochishlik uchun.
+ctrl+shift+n - yangi sahifa ochishlik uchun.
+ctrl+alt+F1 Full screen Pro lar uchun lekin F1 dan F6 gacha sahifa ochsez bo'ladi. F7 esa exit.
+ctrl+z Minimaze
+fg Maximize ishini bajaradi.
+ctrl+c Close programm.
+Ctrl+Shift+q Close Terminal.
+F11 - Full Screen.
+Ctrl+Shift++ Zoom.
+Ctrl+- Little zoom.
+ctrl+shift+c copy
+ctrl+shift+v paste
+__________________________________________
+SSH bizga Windowsdan Linuxga ulanish uchun kerek:
+sudo apt-get install openssh-server
+ssh login@192.156.1.1 bu udalenni boshqa kompga ulanishlik uchun.
+service ssh status - Statusni tekwirishlik uchun.
+xhost:
+telnet: sshni ishini bajaradi lekin sshdan havfsizligi tufta
+scp: udalyonni xolatda copiyalash yaxshi narsa
+sftp:  udalyonni xolatda copiyalash yaxshi narsa
+
+Endi Linuxdan Windowsga ulanishni ko'rib chiqamiz:
+tsclient:
+Agar tsclient ishlatishni xoxlamasez unda rdesktop ni ishlatishiz kerek.
+
+rdesktop 192.1.1.23
+rdesktop -u montana -p welcomeo win1 betta user bilan passwordni so'rayabdi. va oxirgida hostni so'rayabdi.
+rdesktop -f win1 Full screen qilib iwlatishlik uchun.
+rdesktop -0 -r sound:local win1 betta bizga primoy ovoz haqida aytyabdi
+rdesktop -E win1    Shiforvanni aloqani o'chirishlik aytilyabdi.
+
+neofetch - Sysinfo
+df -h vinchesterga oid bo'lgan narsalarni ko'rsatadi.
+uptime - comp qanchadan beri yoniq turibdi shular haqida qisqacha ma'lumot beradi.
+uname - qaysi OS daligizi qisqa qilib ko'rsatib beradi
+uname -a To'liq ko'rsatish uchun.
+hostname host ismini chiqarib beradi.
+users - Admin ism.
+whoami: Profil ismini ko'rsatish.
+passwd # Oldin terishdan oldin sudo -i qilib rootga kirasiz keyin passwd usernamenizi terasiz keyin parolni so'redi. Bu Parolni yangilash uchun.
+chfn -
+w - sistemaga kimlar kirganini ko'rsatuvchi kod.
+date - Bugungi chisloni ko'rish.
+cal - Calendar. Agar -y qo'shimchasi bilan bersez butun yillikni ko'rsatadi.
+cal 12 1989 qilib bersezam bo'ladi.
+xclock: Soatni chiqaradi.
+vdir - ls ni tog'asi.
+lscpu - CPU haqida to'liq ma'lumot.
+whereis - Programma qayerda joylashganligini ko'rsatib beradi.
+ps - qaysi dasturlar ishlabturganligini ko'rsatadi. Yani panelizda qaysi dasturlar ochiq turganligini ko'rsatib beradi.
+ps aux - Dispetcher zadach.
+ps -u idris  - idris nomidan ochilgan har bir protsesni ko'rsatadi.
+ps -u idris u - endi CPU siga qo'shib ko'rsatadi.
+chattr Shu sani berkilib qolgan fleshkenga kerekak
+sensors - haroratni ko'rsatib beradigan kod.
+
+
+xload nimaligini bilmoqchiman.
+top: bu ps ni tanishi. Dispetcher zadach
+top -d 5 - har besh soniyada dispetcher zadachni birjaga o'xwatib online ko'ratib turadi.
+top -n 3 - uch soniyadan keyin topdan chiqib ketadi.
+q - topdan chiqishlik uchun.
+
+sort - Alfabit harflari bo'yicha sartirofka qilish | sort
+sort -r Alfabitni teskarisi...
+
+free - RAM ko'rsatadi. Kilobayt xolatda yoki bayt xolatda ko'rsatadi.
+free -m - Megabayt xolatda ko'rsatadi. Asosan kichkina ishlarizda yaxshi
+free -  -gigabayt holatida ko'rsatadi. Kotta ishlarni qilib turganizda tekshirgani yaxshi
+free -b - bloklab ko'rsatadi.
+free -s 5 - har besh soniyada obnovit qilib ko'rsatadi RAM izi holatini
+
+sed: Microsoft Wordda macros digan narsa bo'lardi harflarni yoki kalimalarni almashtirish sed shu ishni bajaradi misol:
+cat file.txt | sed s/Idris/Adam/
+Betta Idrisni Adamga almashtir diyabmiz... Chala holatda
+tr: bu ham chala holatda simvollarni almashtirarkan... yoki simvollarni tekstga almashtirish.
+diff: 2 ta bir xil fayilni solishtirib ko'radi. Chala
+awk: ko'rib chiqish kerek.
+cut: ko'rib chiqish kerek.
+
+locate - Qidiruv codi faqat narsa qayerda joylashganini ko'rsatadi holos o'zgartirmaydi. misol: locat porsche
+locate -i porsche bu agar ko'proq ma'lumot olmoqchi bo'lsez kerek bo'ladi. teppadegisi esa qisqa ma'lumot uchun.
+locate -n 3 pdf bu yerda bizga uch dona pdf ni topib ber diyabdi xolos. rkhunter juda kereklik narsa keyin tekshirib ko'rgin...
+
+grep - Locatega nisbatan boshqacha masalan siz bir text fayilni ichida manabu kalimasi bormi yani u text fayilni ochmasdan turib ichidegi bir kalimani bormi yo'qmi bilmoqchisiz shunaqa payitlari kerek bo'ladigan cod. Masalan:
+grep Salom file.txt yana bir bowqacha uslubi ham bor grep kino *
+grep Salom file.txt hujjatni ichidan salom kalimasini qidirishga tushadi.
+ps auwx | grep init Disbpetcher ichidan initni qidirishga tuwadi.
+
+find - Qidiruv kodlarining eng yaxshilaridan biri.
+find / -name mercedes bizga ismga oid bo'lgan narsalarni chiqarib beradi.
+find -user idris - bu yerda profil yani OS ni ichidagi polzevetlerni topish haqida gap ketyabdi.
+find ! -user idris - yuqorida idrisni qidirgan edik. Lekin bizga Idrisdan tashqari boshqalarni ham chiqari bermasligi uchun chown belgisi yani undov ! qo'yib ishlatsek bizga faqat idrisga oid masalalarni ko'rsatib beradi...
+find -size - bu bizga hajmiga ko'ra topib beriz ushun.
+find -size b 512-baytlik bloklarda.
+find -size c baytda qidirish.
+find -size k kilobaytga ko'ra.
+find -size M megabaytga ko'ra.
+find -size G gigabaytga ko'ra. Misol: find -size 10m agar bunda ko'proq bermoqchi bo'sez find -size +10m agar bundan kamroq bo'sa find -size -10m
+find -type fayilni tipiga qarab qidirish. Misol:
+f - oddiy fayil.
+d - catalogda
+l - silkalar simvollik.
+b - maxsus blokdagi fayillar
+c - maxsus blogdagi simvollik silkalar
+p - fifo
+s - soket
+endi bularga misol: Aytelik bizda bir ismga oid bo'lgan cataloglar bor ularni qidirishlik uchun:
+find music/ -type d buni bosganimizdan keyin bizga ma'lumotlarni chiqarib berdi diylik.
+endi sartirofka qilishlik uchun ayni shakilda faqat qo'shimchalar bilan yozamiz kodni.
+find music/ -type d
+
+
+history - yozgan hamma komandalariziy ko'rsatib beradi.
+history 5 - oxirgi yozgan 5 komandezi ko'rsatib beradi. Har-bir yozgan codizi historyda raqamlab qo'yishgan shu ochilgan historydan istagan codizi yana terishingiz mumkin buning uchun nomerini ko'rasiz va shu nomerni boshida undov bilan terasiz. misol: !1293 yoki nomeridan emas balki berilgan komanda bilan yozsez bo'ladi masalan !ls
+_________________________________________________________________________________________________
+sudo apt-get --purge remove npm Programmani udalit qilishlik uchun. E'tibor bergan busez purge kalimasi ishlatilaybdi bu digani lashlushi bilan o'chir digani.
+sudo aptitude bu bizga apt-getni o'rniga kerek boladi.
+sudo apt-get update - obnovleniya qilishlik uchun.
+sudo apt-get update; sudo apt-get upgrade arqama arqa obnovleniya qiladi.
+sudo apt-get update && sudo apt-get upgrade yoki mana bunday uslubda.
+sudo apt-get install ranger - Ranger programmasini o'rnatish.
+sudo apt-get remove ranger - Ranger programmasini o'chirish.
+sudo apt-get install ranger skype betta bir vaqtni o'zida 2 programni o'rnatish haqida gap ketyabdi.
+sudo apt-get -f install O'rnatishlikda problem bo'sa -f bilan o'rnatib ko'ring.
+sudo apt-get -f remove O'chirishlikda problem bo'sa -f bilan o'chirib ko'ring.
+sudo apt-get -u install betta programmani qaysi joylarini obnovit qilish kerekligini aytib o'tadi.
+sudo apt-get --purge remove ranger Betta bizga Regeditdegi musrlariga qo'shib o'chirishni aytyabdi. Purgeni o'rniga * qo'yib ham ishlatsa bo'ladi manimcha
+sudo apt-cache search ranger betta biz hozir ranger programmasini yangi versiyasi chiqdimi tekshiryabmaiz yani bu kodlar bilan biz programmalarni yangi versiyasi chiqqanmi yo'qmi bilmoqchimiz lekin hali tekshirib ko'rganim yo'q o'zim.
+sudo apt-get clean bekorchi fayillarni arxivdan tozalaydi. Yani Keshga to'lib qolganlarni aytyabman.
+find /var/cache/apt/ -name \*.deb  Musorlar to'plangan joy. Tozalash uchun pasdegi kodga qareng.
+sudo apt-get clean  bu tozalash uchun.
+________________________________________________________________________________________________
+sudo aptitude update teppadegi o'zi
+sudo aptitude upgrade
+sudo aptitude clean - ruchnoy musr tozalash.
+sudo aptitude autoclean - musrni tozalash shu bilan ruchnoy tozalashni unutasiz.
+sudo aptitude install ruby
+sudo aptitude remove ranger
+sudo aptitude dist-upgrade ruby
+
+
+man - bu kod komandalar haqida ma'lumot olish uchun yani help man'nosini beradi. Misol: man ls endi ls ga oid ko'p ma'lumot chiqdi endi buni hammasi monitorga sig'maganligidan no qulaylik kelib chiqadi shunda teppa pasga tushirish uchun F va B hariflarini ishlatamiz. Man xolatidan chiqishlik uchun Q harfini bosamiz.
+man -k kod haqida to'li ma'lumo olish. Misol: man -k ls
+man -f qisqa ma'lumot olish.
+
+==================================================================================
+-R cataloglarga ishledi. Recursive manosini beradi.
+-* gruppalik narsalarni o'chirishlik uchun.
+-v ish jarayonini ko'rishlik uchun.
+-i interactive manosini beradi Ehtiyorkorlik bilan ishlashlik uchun bu codni     rm bilan ishlatishlik yaxshi.
+-f force manosini beradi. Shuni Alternativi whatis
+whatis ls
+-n raqamlash yoki --number asosan txt fayillarida qo'l kelishi mumkin.
+; - Nuqta vergul navbatma navbat bir ishga buyurganizda kerek bo'ladi. Misol: ls; ls -1; ls -latr
+&& - bu ham ; o'xwagan lekin bunda 1-cod muvofaqiyiatlik bitsa keyingisiga o'tgin degan ma'noni bildiradi. Agar teskarisi bo'lsa usha yerda to'xtab qoladi. Misol: sudo apt-get update && apt-get upgrade
+Diqqat! Biz ; va && ko'rdik agar o'chiriledigon narsalar bilan ishlasez && qulay lekin uchirilmedigon ishlar bilan ishlases ; qulay deb o'ylayman.
+|| - Bu ikki alifcha && bundan farqi agar birinchi ish bitmasa keyingisiga o'tgin degan ma'noni bildiradi yani yoki unisi yoki bunisi degan ma'noda. Deylik siz bir narsani qidiryabsiz u narsa 2 yerda bor siz || bu bilan ishlaganizda birinchi yerda siz izlagan narsa yo'q disa 2 - yerga automatik qidirishga o'tib ketadi.
+() - buni yaxshi tushunmadim chala ilmim bu soxada...
+| - bu alif ;,&&,() bulardan farqi shuki bu alifda bir - biriga aloqasi bo'lmagan komandalarni berish mumkin misol: ls -latr | grep p e'tibor bering listni ochgandan keyin manga p harfiga oid bo'lgan catalog yoki fayillarni topib ber dedik.
+> - bir ma'lumotni bir fayil ichiga kirgizishlik uchun ishlatiladi.M: echo Salom qalesiz? > file.txt
+>> - teppada ma'lumot qo'shdik endi yana usha fayilga ma'lumot qo'shmoqchi bo'sek >> file.txt ko'rsatishimz kerekak aks xolda birinchi qo'shgan narsamizi uchirib ustiga yozvoradi. Birinchisini o'chirmagan xolattda tagiga yozmoqchi bo'sek shuni ishlatishimiz mumkin.
+< - Bu ham chala hali...
+!! - oxirgi komandani qaytarish.
+
+====================================================================================
+
+
+
+ls --help ls nimagligi haqida ozgina ma'lumot berish.
+ls - catalog listlarini chiqarib berish.
+ls -a  - catalog listlarini yashirin fayillar bilan birga chiqarib berish.
+ls -l cataloglarni list holatida ma'lumotlari bilan ochish.
+ls -1 cataloglarni list qilib ochishlik.
+ls -s razmeriga (hajmiga qarab sartirofkalash) tartiblash. Hajmi kottasi birinchiga chiqadi ozginasi esa eng oxirgida lekin -r bilan teskari qilsez bo'ladi.
+ls -h kelobayt yoki mb kottaligini ko'rsatishlik uchun -lh qilib ishlatsez yaxshiroq.
+ls -m cataloglarni verguli bilan ko'rsatadi.
+ls -F cataloglarni slesh bilan ko'rsatishlik.
+ls -lt listni tarihi bilan ko'rsatadi masalan qaysi vaqtda qaysi catalog yoki file ochilgan tayyorlangan... aslida -t o'zi lekin qo'shimchasi bilan yaxshi.
+ls -r tartiblik list ko'rinishi sizga yoqmagan payitda tartibsiz ko'rsatishligi uchun buni ishlatsez bo'ladi.
+ls -latr yuqorida kelgan -l -a -t -r hammasini aloxida ishlatsez ham bo'ladi istasez bitta qilib ham yozsez bo'ladi... To'g'risi farq sezmadim.
+
+
+
+pwd: - qaysi catalogda turganizi ko'rsatib beradi.
+
+cd:  yo'l ochish yoki o'zini ishlatsa orqaga qaytish vazifasini bajaradi...
+cd ~:  yo'l ochish yoki o'zini ishlatsa orqaga qaytish vazifasini bajaradi...
+cd ..:  orqaga va orqaga va yana orqaga.
+cd -: Forward and Backspace. ma sha Alloh.
+
+mkdir:  yangi catalog ochish.
+
+mkdir -р /tmp/a/b/c/new
+mkdir -m 700 /tmp/new2
+Создает каталог new в / tmp
+Создает по мере необходимости каталог нижнего уровня для new Создает каталог new2 с правами доступа drwx---
+Первая команда mkdir создает новый каталог в уже существующем каталоге /tmp. Во втором примере каталоги создаются по мере необходимости (подкаталоги а, b и с), чтобы в результате был создан каталог new. В последнем примере, чтобы установить права доступа к каталогу, добавляется параметр -m.
+Поскольку первым символом строки доступа к каталогу является буква d, данный файл может быть определен как каталог:
+
+> file.txt - yangi fayillar ochishlik uchun.
+> newfolder/file.txt - manzilini ko'rsatgan holatda yangi fayl ochishlik. Shetda bir narsani aytib o'tmoqchiman bu narsa huddai ScreenRecorderga o'xwab ketadi lekin rasim holatida yoki o'zgartirsa bo'ladiga nusxalash xolatida: ls -l > file.txt qilsek bizga ls -l chiqarib bergan narsani txt ichiga tuwurib beradi yoki shuni help > file.txt qilsek terminalni helpdagi hamma kodlarini bizga o'tqazib beradi vapsheta juda yaxwi narsa dib o'yleman. Lekin bunda bir muammo bor masalan siz biroz oldin qo'ygan ma'lumotizi pasiga yana bir boshqa ma'lum qo'ymoqchisiz agar qo'ymoqchi bo'sez bundan oldingisini o'chirib yangisini qo'yadi yani eskisi o'chib ketadi. Shuning uchun keyingi qismda biz eski ma'lumotlarni o'chirmasdan yoniga boshqa ma'lumot qo'shishni o'rganamiz... help >> doc.txt Mana endi eski ma'lumotni tagiga shu help ma'lumoti tushadi albatta eski ma'lumot o'chmagan xolatda.
+touch asosan vaqtni o'zgartirish uchun lekin bu code orqalik yangi file ham ochsa bo'ladi touch file.txt
+touch asosan fayillarni ochilgandan keyingi vaqtini o'zgartish uchun yaraydi. Masalan bir faylni ancha oldin ochilgan endi shuni vaqtini yashirishlik uchun siz touch file.txt dib yozsez hozirgi vaqtni fayiliga aylanadi yani huddi hozir ochilgandek bo'lib qoladi.
+
+Remove: fayl yoki cataloglarni o'chirishlik uchun.
+shred - havflik o'chirish...
+rm - Fayilni o'chiradi.
+rmdir bo'sh kataloglarni o'chirishlik uchun.
+rm -Rf bo'shmi to'lami catalogni o'chirishlik uchun.
+rm -R Folder yoki turgan joyizda bir necha catalog o'chirishlik uchun rm -R Folder folder Lux. Oddiy catalni o'chirihslik uchun.
+Bonus: Agar sizda ismi bir-birga o'xwab ketedigon papkalarni bittadan o'chirishlik qiyin bo'sa mana bunday uslub bilan tez o'chirsa bo'ladi. Misol deylik sizda Folder1 Folder2 va 100 gacha shunaqa cataloglar bor har - birini ismini yozib chiqib bo'maydi barmoqlarga rahm qilish kerak. Endi biz nima qilamiz rm -R Folder* yozamiz boshi Folder bilan kegan hamma cataloglar o'chadi.
+rm -R Folder* yoki rm *txt yoki rm *mp4 bu formatga oid bo'lgan hamma narsa o'chib ketadi. Uxaxaxaxax
+rm file.txt - faylni mana shunday o'chiradi.
+rm newfolder/file.txt - catalog orqalik ham o'chirsa bo'ladi. Huddi yangi fayl ochganizdek.
+
+echo - shunchaki maktub yozuvchi kod. Lekin bu kod bilan siz yuqorida ochgan fayilingizni ichiga yozuv yozishingiz mumkin bo'ladi. Buning uchun siz fayl joylashgan katalog ichidan echoni qo'llanishizga to'g'ri keladi... Masalan:
+echo Salom man Idrisman > file.txt
+
+cat - Hozir fayilni ichiga yozgan yozuvimizi ko'rishlik uchun ishlatiladi. Masalan:
+cat file.txt
+cat -n nomer bilan ko'rsatish.
+cat -s
+cat -b file.txt faqat yozuv yozilgan qatorni raqam bilan ko'rsatish.
+
+Lekin shuni unutmangki cat qisqa hujjatlarni o'qigani qulay lekin uzun hujjatlarni o'qigan juda qiyin...
+Agar sizda 2 dona yoki 3 dona hujjat bo'sa hammasi kichkina ma'lumotlar bilan to'lla bo'sa siz bir komanda bilan hammasini o'qishingiz mumkin bo'ladi. M: cat file.txt file2.txt vahokazo...
+Deylik biz 2 ta hujjatni bir qilib yangi hujjatga qo'ymoqchimiz unda bunday qilamiz. M: cat file2.txt file3.txt > file.txt
+Lekin eski hujjatga qo'shmoqchi bo'sek unda >> foydalanamiz...
+
+more: bu cat kodining boshqa alternativi bo'lib undan farqi qisqaroq ilib sahifa sahifa qilib ko'rsatishga harakat qiladi... Masalan catda siz ma'lumotni hammasini bittada ko'rishingiz mumkin lekin full screenda siz ko'p ma'lumot bo'sa qiynalasiz albatta. teppa pasga chiqiw qiyin bo'lishligi mumkin shunda more ni ishlatsez yaxshiroq bo'ladi...
+
+less: bu kod yuqoridagi cat va more dan farqi shuki bunda siz qidiruv bo'limi bilan shug'ullanasiz yani ochgan ma'lumotingizni ichida sizga biror-bir ism yoki narsa kerek bo'lsa siz ismini yozishingiz mumkin masalan /about disez aboutlarni chiqarib beradi bu mani eng yoqtirgan kodlarimdan biri.
+less - "j" qatorma-qator pasga tushuradi "k" qatorma-qator teppaga. "Space" esa betma bet o'tqizadi buni teskarisi esa "b" harfi orqa betga o'tishlik uchun. "p" boshiga qaytishlik uchun "Shift+G" oxirgiga tushishlik uchun bu ishni Shift + <> bular ham bajaradi. Va nixoyat "Shift+Q" less tizimidan chiqishlik uchun. Hujjat haqida ma'lumot olishlik uchun "=" bosamiz. Teng belgisini bosganimizdan keyin less holatiga qaytishlik uchun Enterni bosamiz..
+less -N bundaham cat -n o'xwagan funksiya faqat kotta harf bilan bo'ladi.
+less bilan biror bir ma'lumotni o'qib turgan vaqtingizda bir narsani qidirmoqchi bo'lishingiz mumkin shunda sizga slesh yordamchi bo'liwi mumkin /about sizga ma'lumotingiz ichida shu narsa bo'lsa chiqarib beradi...
+N va n bular / ishlatib topgan narsazi topilgandan keyin keyingi topilganni ko'rsatishlik uchun yani next...
+less da faqat o'qish yoki qidirish emas o'qib turgan narsezi o'zgartirish ham mumkin buning uchun siz "v" harfini bosasiz. Albatta o'zgartirish boshqa programma orqalik bo'ladi masalan manda nano chiqdi sizda vim chiqishi mumkin agar sizga bu redaktordan biri yoqmasa boshqasiga o'zgartirishingiz mumkin buning uchun siz export EDITOR=vim  deb buyuruq berishingiz muymkin...
+
+head - bu code ham o'qish uchun mo'ljallangan faqat hujjat ichidagi 10 qatorni ko'rsatadi holos. Deylik sizda 100 dan oshiq hujjatlarni ismi bir hil holatda bor yani 1. 2. 3 yoki shunga o'xwagan file.1 fil2 shunga o'xwaganmi yoki birortasiga mahsus ism berilmagan xolatda ichidan o'zizga kereklik hujjatni topishingiz kerak bo'ladi shunda tezlik bilan siz har bir hujjatni ichida nima yozilganligini bilishlik uchun ishlatishligingiz mumkin... head file.txt yoki head file.txt file2.txt vahokazo.
+head -n 20 file.txt Hujjatning boshidagi 20 qatorini chiqarib beradi.
+ps auwx | head -n 5 Disbpetcher zadachni boshidegi 5 qatorini chiqarib beradi.
+
+tail - bu headni teskarisi. Ma'lumotni oxirgisidegi 10 qatorni ko'rsatadi.
+tail -f bu komanda online rejimda kuzatib boradi oxirgidegi ma'lumotlarni yopilmagan xolatda juda qulay narsa...
+tail -n 5 file.txt hujjatni oxirgisidagi 5 qatorni ko'rsatib beradi.
+
+file: - Biror - bir faylni nimaligini bilishlik uchun iwlatiladi. Masalan: file file.txt natijada bizga bu fayil haqida ma'lumit beradi...
+
+Copy:
+cp - Nusxalash (copy) cp file.txt filecopy.txt: nimaligini tuwuntiraman. cp file.txt diganimizda nusxa qilmoqchi bo'lgan fayilimiz edi, undan keyin kelgan filecopy.txt esa nusxalagan narsamizning yangi nomi edi shu bilan nusxalash yakunlandi va nusxalagan narsamizning faqat ismi o'zgardi ichi emas. Lekin bir narsa nimaga nusxalagan narsamizni ismini o'zgartirdik chunki bilasiz 2 ta bir xil ism bilan bir joyga tushmaydi. Endi boshqa joyga nusxalamoqchi bo'lsakchi unda cp dan keyin manzilni ko'rsatishimiz kerak bo'ladi. Masalan:
+cp file.txt ~/Desktop
+Endi diylik ismi bir xil bo'lgan farqi ismni oxirgisida raqamlik bo'lgan fayillar masalan file1.txt file2.txt shunga o'wxash narsalardan 100 dona bo'lsa hammasini nusxalamoqchisiz deylik. Shunda biz nima qilishimiz kerak bo'ladi...
+cp file?.txt ~/Document/Doc mana bunday yozasiz adresni o'ziz xoxlagan joyizga yozasiz albatta. Agar rm daham shuni ishlatsez bo'ladi...
+bir boshqacha uslubiniyam ko'rsatib o'tmoqchiman masaln biz nusxa qilmoqchi bo'lagn faylni hozirda turgan catalogni ichida yana bir katalogga nusxalamoqchimiz shunda -v qo'shimchasini ham qo'ysak chiroyli bo'ladi -v qo'shimchasi nima iw bajaradi? Bu -v bizga hozida nusxalash paytidagi ishni ko'rsatib beradi... Maslan cp file.txt -v Category agar.
+
+Move:
+mv faylni ismini o'zgartirishlik yoki boshqa joyga ko'chirishlik vazifasini bajaradi:
+mv file.txt ~/Desktop Hozir biz file.txt Rabochi stolga o'tqazib qo'ydik
+mv file.txt file2.txt Hozir biz fayilni turgan joyida faqat ismini o'zgartirib qo'ydik.
+
+zip bu fayl hammamizga ma'lum lekin bir narsa haqida qisqacha gapirib o'tmoqchiman. Biz arxivatsiya bilan sjatiyani bir nars dib o'ylaganmiz aslida farqlik narsalar masalan: Sizda 10 dona 100kb lik rasm bor siz buni 1 arxiv fayil qilib qo'ysez 1000kb bo'ladi. Lekin siz bular sjat qilib qo'ysez 800kb bo'lishi mumkin. Farqini tushundizmi? Endi zip qilishni o'rganamiz. Bundan oldin bir narsa zip, rar va boshqa arxivatsiyalar ko'p lekin eng mashxuri zipdur. Zip ham arxivatsiya qiladi ham sjimat qiladi.
+zip zipqilmoqchi bo'lgan fayilimizga ismberamiz: zip doc.zip 1.txt 2.txt 3.txt betta bir necha fayillarni zip qilishni ko'rsatib o'tdim.
+unzip esa huddi shu codlar bilan izvlechi tiladi... yani unzip file.zip tamom lekin bir narsa izvlichitni boshqa papkaga o'tqazib qilinsin kashasi chiqib ketmaslik uchun.
+unzip -l file.zip bu yerdagi -l bizga izvlichit qilmasdan faqat arxivni ichida nima borligini ko'rasib beradi... Zo'r narsa.
+unzip -t file.zip bu esa bizga izvlechit qilmasdan oldin ichida buzulgan fayillar bormi yo'qmi odlindan habar berad, juda kereklik narsa agar bu bilat tekshirmasdan izlechit qilib keyin zipni o'chirvorsek keyin chataq bo'ladi...
+zip -P welcome file.zip hujjatim.txt bu yerdagi -P harfi zipga parol qo'yishlikni bildiradi, welcome esa bu paroldur. Lekin -P bilan parol qo'yish havflik chunki history comandasi bilan ko'rib olish mumkin parolni. Shuning uchun biz -e ni ishlatamiz.
+zip -e myfile.zip *txt bunda bizdan parol terishligmizni va tasdiqlashimizni so'raydi va Tamom. Lekin bir narsa bu parollangan zip oddiy odamni qo'lida ochish qiyin lekin ustasini qo'lida buzib ochvoladi...
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+IP4 eski tarmoq tizimi lekin IP6 ni ham yani yangi tarmoq tizimini o'tamiz.
+Kitobning 327 betinin o'xirgi bo'limida ip6 haqida ma'lumot bor shuni ko'rib  chiqish kerak.
+
+ifconfig: Interfacec cofiguration -  compizi setga aloqasi bo'lgan ishlavotgan setlarni hammasini chiqarib beradi, uni ichida ham WIFI bo'sin yoki lan bo'sin tarmoqni chiqarib beradi. Bu kodni tergan vaqtingizda ishlab turgan narsani bilishlik uchun Loopback. Ishlame turgan narsani bilihlik uchun up bilan boshlanga sallohani ko'rishlik mumkin. 127.0.0.1 har doim shu ipni ko'rinib tursa bordi keldi aloqa yaxshiligini bildiradi.
+ifconfig -a: all - hammasini yani ishlame yoki ishlab turgan hamma setovoy interfaceni ko'rasiz.
+ping: Asosan ikki comp o'rtasidagi zaprosni tekshirgni masalan bir kishiga alyo diganizda u javobiga eshitaman disa demek aloqadasiz. ping www.google.com lekin google ni url o'rniga ip sini ham berib zapros bersa bo'ladi. Bizga faqat aloqa bormi yo'qmi bilishlik uchun kerak bo'ladi holos bu programma.
+bazida set ulanme qosa siz ifconfig orqalik adaptirizi topasiz keyin ifup bilan ulashiz mumkin bo'ladi masalan ifup eht0
+ifup: bu comanda odattcleara sizga ko'rinmagan holatda ishledi compizi yoqqanizda netga ulanadi avtomat holatda
+ifdown: ifup aloqani ulasa ifdown aloqani uzadi. misol: ifdown ifdown eht0
+ifdown ham ifup ham natijani info shakilda ko'rsatmaydi ishga tushurganizdan keyin albatta...
+iwconfig: biz ifconfigni setga aloqasi bor dedik lekin u bizga faqat cabelni setni ko'rsatar edi endi iwconfig esa bizga cabelsiz yani WiFi ni ko'rsatib beradi. Betta ifconfig ham iwconfig ham chala holatda yozilgan to'liq holatini hali ancha o'qish kerek.
+ip a:
+ip help:
+ip addr help:
+ip route help:
+ip tunnel help:
+ipcalc: Oldin buni o'rnatish kerek bo'ladi. Bu comanda bizga Addresni, Maskani va Xostni ma'lumotlarni ko'rsatib beradi.
+netstat -s | less: bizga tcp va boshqa setlarni ko'rsatib beradi.
+sudo  netstat -tanp: Aktiv TCP yani ulanganlarini ko'rsatib beradi.
+sudo netstat -tanp | grep -i listen: Eshitilib turilgan portlaar.
+
+lspci | grep -i wireless: qanaqa wifi plata o'rnatilganligini ko'rish.
+ping -c: odatda bir sayt bilan aloqa borligini blishlik uchun biz ping www.bing.com yozamiz lekin agar aloqa bo'lsa bizga ping timmasdan aloqa borligini har bir soniyada ko'rsatib turadi. Aslida bizga aloqa borligi haqida bilishligimiz yetdi shuning uchun bormi yo'qmi bizga qisqa qilib ping -c 5 www.bing.com bu holatda bizga 5 marta zapros beradi aloqa bormi yo'qmi diya va keyin o'zi ishini bajargandan keyin 6 chisida yopiladi.
+traceroute: Bu programm o'rnatish kerek... Tasavur qiling bir saytbilan kecha aloqangiz bor edi yani kecha iwlab turgandi bugun esa saytga kirolamaybsiz ayib kimda sizi compizdami yoki serverda buni bilishlik uchun traceroute www.bing.com  diylik shu saytga kirolmadim shunda *** chiqishni boshladi demek qaysidir uzelda problem bor problem provayderda ushetda *** provayderni yozadi manzilini shu provayderga aloqaga chiqish kerak bo'ladi.
+traceroute -m 40 www.bing.com mana bu kod bilan ham masalani hal qilsa bo'ladi adashmasam.
+host: ip bilishlik uchun - host www.bing.com.
+route: bizga set tarmoqlarini ipsi va boshqa narsalarni ko'rsatib beradi.
+whois: Oldin ustanovka qilishlik kerek. bu sayt egasi kimligini ko'rsatib beradi. whois www.yahoo.com
+
+#bu 3 ta commanda bir ish bajaradi eng yaxshirog'i manga w
+who polzevetlerni ko'rsatish.
+finger
+w
+_________________________________________________________________________________________________
+wget: saytlarni ko'chirib olish masalan: wget -r -l 10 -k -o log-file.txt -p http://example.org/
+wget -E -r -k -p -w 5 -np http://www.sade.com yoki qisqa xolatda ham bersez bo'ladi
+wget -Erkp -w 5 -np www.sade.com
+
+-r, --recursive включение рекурсивной загрузки
+-l, --level=ЧИСЛО глубина рекурсии (inf и 0 - бесконечность)
+-k, --convert-links делать ссылки локальными в загруженном HTML или CSS
+-o, --output-file=ФАЙЛ записывать сообщения (логи) в ФАЙЛ
+-p, --page-requisites загрузить все изображения и проч., необходимые для отображения HTML-страницы
+-m, --mirror короткий параметр, эквивалентный -N -r -l inf --no-remove-listing.
+
+
+culr: Bu ham wgetni do'sti
+________________________________________________________________________________________________
+Eng kereklik programmalardan bir nechtasini ko'rsatib o'tmoqchiman. ssh, wget, curl rsync
+________________________________________________________________________________________________
+
+wc: wc file.txt bu fayilda nechta qator, so'z va bayt borligini ko'rsatib beradi.
+
+Sox: Multi mediaga hush kelibsiz. Soxni ichidan mp3 konteiner yo'q.
+sudo apt-get install sox
+sox -h bu komanda bizga sox qaysi formatdagi audio fayillarni ochib berishini ko'ramiz. Soxni o'rnatganimizdan keyin play qo'shimchasi bilan audio fayilllarni eshitishimiz mumkin. Misol:
+
+play michael.wav
+play *.wav bu formatdagi audioni 32 donasini eshitish uchun.
+play hi.au vol .6 Au formatdagi fayilni eshitib ovozini pasaytirdik.
+play -r 14000 short.aiff    aiff formatdegi audioni 14 000 Ghz chastotada eshitdik.
+
+sox programmasi o'qib bera oladigan formatlar bilan bemalol eshitishingiz mumkin.
+!Shu yerda bir narsani aytib o'tmoqchiman. Wav formati ogg formatiga nisbatan sifatli holbuki joyni qissa ham.
+ogg123: ogg fayillar uchun
+mp321: mp3 fayillar uchun ustanovka qilasiz.
+lame: wav, flac va mp3 formatga konver qilish uchun kerak bo'ladi.
+oggenc: wavni ogga konvertlaydi.
+flac:WAV, AIFF, RAW, FLAC или OGG shu formatlarni flacga convert qiladi. Flac bepul konvertordur. Sifatni saqlab qoladigan.
+
+alsamixer: Linuxdegi audio sistemni ko'rsatishlik uchun.
+alsamixer -V playback ishlab turgan kanallarni ko'rsatadi holos.
+alsamixer -V all
+
+Endi rasmlarga o'tamiz.
+sudo apt-get install imagemagick
+identify: rasm haqida ma'lumot olishlik uchun.  misol:
+identify photo.jpg Rasim haqida qisqa ma'lumot.
+identify -verbose photo.jpg | less rasm haqida to'luq ma'lumot.
+convert: jpg rasmni png ga conver qilish. masalan:
+convert photo.jpg photo.png
+convert photo.gif photo.bmp
+convert photo.tiff photo.pcx ....
